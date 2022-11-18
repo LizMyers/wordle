@@ -2,23 +2,28 @@
 *::before,
 *::after{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 :root {
   --clr-light: white;
   --clr-dark: #232323;
-  --clr-border: #999;
-  --clr-letter: #333;
+  --clr-border: #ff004c;
+  --clr-letter: rgb(87, 85, 85);
   --clr-error: #ff004c;
-
+  --keypad-background: #d3d6da;
+  --border-highlight: 2px solid #17c317;
   --foreground: var(--clr-dark);
   --background: var(--clr-light);
 }
-
 @media (prefers-color-scheme: dark){
   :root{
-    --background: var(--clr-light);
-    --foreground: var(--clr-dark);
-    --clr-letter: whitesmoke;
+    --background: var(--clr-dark);
+    --foreground: var(--clr-light);
+    --clr-letter: #efefef;
+    --keypad-background: #666;
+    --border-highlight: 2px solid #f2db08;
+    --clr-error: #f2db08;
   }
   h1{
     color: var(--clr-light)
@@ -29,38 +34,43 @@ body {
   background: var(--background);
   font-size: 1em;
   font-family: 'Raleway', sans-serif;
-  margin: 0;
   color: var(--clr-letter);
   text-align: center;
 }
 h1 {
+  display: inline-block;
+  width: 100vw;
   font-size: 1.75em;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-  margin: 0 0 40px 0;
-
+  line-height: 3em;
+  margin: 0 10% auto;
 }
-.errorMsg{
-  display: block;
-  color: var(clr-error);
+div.errorMsg{
+  display: inline-block;
+  text-align: center;
+  width: 100vw;
+  border: 0px solid white;
+  color: var(--clr-error);
   font-size: 1.2em;
-  margin: 20px 0 20px;
+  line-height: 1.2em;
   font-weight: bold;
+  margin-left: 10%;
+  margin-bottom: 10px;
 }
 span.stats {
   font-size: 2em;
 }
 /* rows */
 .row {
+  min-width: 450px;
   text-align: center;
   display: flex;
-  justify-content: center;
+  margin-left: 18%;
 }
 .row > div {
   display: block;
   width: 60px;
   height: 60px;
-  border: 1px solid #bbb;
+  border: 1px solid #666;
   margin: 4px;
   text-align: center;
   line-height: 60px;
@@ -72,7 +82,7 @@ span.stats {
 
 .row > div.filled {
   color: var(--clr-letter);
-  border: 2px solid whitesmoke;
+  border: var(--border-highlight);
   animation: pulse 0.25s ease forwards;
 }
 
@@ -83,8 +93,8 @@ span.stats {
 }
 
 .row > div.grey {
-  --background: #797979;
-  --border-color: #797979;
+  --background: #5f5e5e;
+  --border-color: #5f5e5e;
   animation: flip 0.6s ease forwards;
 }
 .row > div.yellow {
@@ -117,23 +127,25 @@ span.stats {
   --border-color: #17c317;
   animation: flip 0.35s, success .25s ease-in-out 1.5s;
 }
-
 div.winner{
   color: whitesmoke;
   background: #17c317;
 }
-
 .keypad {
+  text-align: center;
+  min-width: 490px;
   max-width: 500px;
   margin: 20px auto;
   cursor: pointer;
 }
 .keypad > div {
-  margin: 5px;
-  width: 40px;
-  height: 50px;
-  background: #eee;
-  display: inline-block;
+  margin: 3px;
+  width: 8%;
+  height: 80px;
+  background: var(--keypad-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   border-radius: 6px;
   line-height: 50px;
@@ -151,16 +163,18 @@ div.winner{
   transition: all 0.3s ease-in;
 }
 .keypad > div.grey {
-  background: #797979;
+  background: #333;
   color: #fff;
   transition: all 0.3s ease-in;
 }
 
 .keypad > div.enterKey{
-  width: 70px;
+  width: 90px;
+  font-size: .85em;
 }
 .keypad > div.deleteKey{
-  width: 60px;
+  font-size: .85em;
+  width: 70px;
 }
 .modal {
   background: rgba(255,255,255,0.7);
@@ -228,6 +242,14 @@ button {
   cursor: pointer;
   border: none;
 }
+img {
+  width: 70%;
+  margin-bottom: -10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* keyframe animations */
 @keyframes success {

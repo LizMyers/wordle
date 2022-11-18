@@ -107,7 +107,7 @@ const useWordle = (solution) => {
             }
             // check word is 5 chars long
             if(currentGuess.length !== 5){
-                setErrorMsg('Word must be 5 chars long')
+                setErrorMsg('Word must be 5 characters long')
                 return
             }
                
@@ -172,7 +172,7 @@ const useWordle = (solution) => {
           addNewGuess(formatted);
         }
 
-        if (letterClicked === '⌫') {
+        if (letterClicked === 'Del') {
           setCurrentGuess(prev => prev.slice(0, -1))
           setErrorMsg('')
           return

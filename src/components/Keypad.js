@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import data from '../data/db.json'
+import Icon from '../components/Icon.js'
 
 export default function Keypad( {usedKeys} ) {
     const[letters, setLetters] = useState(null);
@@ -13,9 +14,11 @@ export default function Keypad( {usedKeys} ) {
     <div className="keypad">
         {letters && letters.map((l) => {
             const color = usedKeys[l.key]
-            if(l.key === '⌫'){
+            if(l.key === 'Delete'){
                 return (
-                    <div key={l.key} className="deleteKey">⌫</div>
+                    <div key={l.key} className="deleteKey">
+                      Delete
+                    </div>
                 )
             }
             if(l.key === 'Enter'){
