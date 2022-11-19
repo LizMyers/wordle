@@ -16,9 +16,9 @@ export default function Wordle({ solution }) {
     document.addEventListener('click', handleClick)
 
     if(isCorrect){
-        // setTimeout(() => {
-        //     setShowModal(true)
-        // }, 2000)
+        setTimeout(() => {
+            setShowModal(true)
+        }, 3000)
         window.removeEventListener('keyup', handleKeyUp)
         document.removeEventListener('click', handleClick)
     }

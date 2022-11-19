@@ -29,7 +29,7 @@ export default function Modal({ isCorrect, solution, turn }) {
   }
 
   if(isCorrect){
-    wins = wins + 1;
+    wins += 1;
     localStorage.setItem('wins', wins)
     count = wins + losses
     percentWon = Math.round(wins / count * 100);
@@ -68,9 +68,9 @@ export default function Modal({ isCorrect, solution, turn }) {
       
         {isCorrect && (
           <div>
-            <h1>{msg}</h1>
+            <h1 className="modalTitle">{msg}</h1>
 
-            <p className='solution'>{solution}</p>
+            {/* <p className='solution'>{solution}</p> */}
             
             <table className='statsContainer'>
               <tbody>
@@ -95,7 +95,7 @@ export default function Modal({ isCorrect, solution, turn }) {
       </div>
     )
   } else if (!isCorrect) {
-     losses = losses + 1;
+     losses += 1;
     localStorage.setItem('losses', losses)
     count = wins + losses
     percentWon = Math.round(wins / count * 100);
@@ -108,7 +108,7 @@ export default function Modal({ isCorrect, solution, turn }) {
     
       {!isCorrect && (
         <div>
-            <h1>Better Luck Next Time!</h1>
+            <h1 className="modalTitle">Better Luck Next Time!</h1>
 
             <p className='solution'>{solution}</p>
             

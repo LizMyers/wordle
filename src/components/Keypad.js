@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import data from '../data/db.json'
-import Icon from '../components/Icon.js'
 
 export default function Keypad( {usedKeys} ) {
     const[letters, setLetters] = useState(null);
