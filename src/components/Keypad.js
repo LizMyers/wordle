@@ -16,7 +16,7 @@ export default function Keypad( {usedKeys} ) {
             if(l.key === 'Delete'){
                 return (
                     <div key={l.key} className="deleteKey">
-                      Delete
+                        Del
                     </div>
                 )
             }

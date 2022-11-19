@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap');
+
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,13 +11,13 @@
   --clr-present: var(--clr-yellow);
   --clr-correct: var(--clr-green);
   --clr-absent: var(--clr-med-grey);
-  --clr-key-text: var(--clr-white);
+  --clr-key-text: var(--clr-black);
   --clr-key-bkgnd: var(--clr-light-grey);
   --clr-tile-text: var(--clr-black);
   --clr-tile-bkgnd: var(--clr-white);
   --clr-tile-highlight: 2px solid var(--clr-med-grey);
   --clr-error: var(--clr-red);
-  --clr-red: #ff9100;
+  --clr-red: #ea730b;
   --clr-white: whitesmoke;
   --clr-black: #121212;
   --clr-green: #6aaa64;
@@ -43,13 +45,16 @@
     --border-highlight: 2px solid var(--clr-dk-grey);
     --clr-white: #fff;
     --clr-black: #121212;
-    --clr-red: #ff9100;
+    --clr-red: #ea730b;
     --clr-green: #6aaa64;
     --clr-yellow: #c9b458;
     --clr-light-grey: #bcbcbc;
     --clr-med-grey: #787c7e;
     --clr-dk-grey: #454545;
     --clr-error: var(--clr-red);
+  }
+  .logo{
+    margin-top: 16px;
   }
   h1{
     color: var(--clr-white);
@@ -58,16 +63,33 @@
     color: var(--clr-dk-grey);
   }
 }
+@media(min-width: 400px){
+  div.errorMsg{
+    width: 100%;
+    text-align: center;
+    border: 0px solid white;
+    color: var(--clr-error);
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+}
 @media(max-width: 390px){
   :root{
+    --clr-key-text: var(--clr-white);
     --enterKey-width: 60px;
     --keys-width: 8%;
-    --keys-height: 65px;
-    --keypad-width: 400px;
+    --keys-height: 64px;
+    --keypad-width: 370px;
   }
+
   h1{
-    font-size: 1.2em;
+    margin: 10px 0 0 10px;
+    font-size: 1.6em;
     font-weight: 600;
+    line-height: 1em;
   }
   div.row {
     width: 300px;
@@ -82,12 +104,27 @@
     line-height: 1.75em;
     width: 50px;
     height: 50px;
-
   }
+  div.errorMsg{
+    color: var(--clr-error);
+    font-size: 1.1em;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin-top: -4px;
+    margin-bottom: 10px;
+  }
+  div.deleteKey{
+    max-width: fit-content;
+  }
+
 }
 @media screen and (orientation:landscape) {
    body{
-    background: red;
+    background: #fff;
+    color: var(--clr-black);
+   }
+   body::after{
+    content: 'Oh no, please rotate your device!'
    }
  }
  
@@ -98,21 +135,22 @@
 body {
   background: var(--background);
   font-size: 1em;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Clear Sans', 'Helvetica Neue', sans-serif;
   color: var(--clr-letter);
   text-align: center;
 }
-h1 {
-  display: inline-block;
-  width: 100vw;
+h1{
+  line-height: 2em;
+}
+.modalTitle {
   font-size: 1.75em;
   line-height: 3em;
   text-align: center;
 }
-.modalTitle{
-  max-width: 400px;
+div.deleteKey{
+  max-width: 40px;
 }
-div.errorMsg{
+/* div.errorMsg{
   width: 100%;
   text-align: center;
   border: 0px solid white;
@@ -121,14 +159,13 @@ div.errorMsg{
   line-height: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
-}
+} */
 span.stats {
   font-size: 2em;
 }
 .grid {
   width: 100vw;
   justify-content: center;
-  border: 0px solid red;
 }
 /* rows */
 .row {
@@ -203,12 +240,14 @@ div.winner{
 .keypad {
   text-align: center;
   width: var(--keypad-width);
-  margin-top: 20px;
+  margin-top: 4px;
   margin-left: calc((100% - var(--keypad-width)) / 2);
   cursor: pointer;
 }
 .keypad > div {
   margin: 3px;
+  font-size: .8em;
+  font-weight: 600;
   color: var(--clr-tile-text);
   width: var(--keys-width);
   height: var(--keys-height);
@@ -311,13 +350,13 @@ button {
   cursor: pointer;
   border: none;
 }
-img {
+/* img {
   width: 70%;
   margin-bottom: -10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 @keyframes success {
   0% {

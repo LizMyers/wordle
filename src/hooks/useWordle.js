@@ -172,7 +172,7 @@ const useWordle = (solution) => {
           addNewGuess(formatted);
         }
 
-        if (letterClicked === 'Delete') {
+        if (letterClicked === 'Del') {
           setCurrentGuess(prev => prev.slice(0, -1))
           setErrorMsg('')
           return
