@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Wordle from './components/Wordle'
 import data from './data/db.json'
-import logo from './assets/logo.svg'
+import Logo from './components/Logo'
 
 
 function App() {
@@ -15,13 +15,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className='logo'>
-        <img src={logo} 
-        style={{
-          width: '120px',
-        }}
-        alt='Wordle logo' />
-      </h1>
+      
+      <div className='logo'>
+         <Logo />
+      </div>
       {/* <h2>solution: {solution}</h2> */}
       {solution && <Wordle solution={solution} />}
     </div>
