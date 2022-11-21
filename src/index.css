@@ -53,8 +53,8 @@
     --clr-dk-grey: #454545;
     --clr-error: var(--clr-red);
   }
- 
-  .logo{
+
+  div.logo{
     fill: var(--clr-white);
     opacity: .75;
   }
@@ -76,16 +76,38 @@
     font-weight: bold;
     margin-bottom: 10px;
   }
+  .logo {
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    text-align: center;
+  }
+  h1{
+    margin: 50px 0 0 10px;
+    font-size: 1.6em;
+    font-weight: 600;
+    line-height: 1em;
+  }
   
 }
 @media(max-width: 390px){
   :root{
     --clr-white: #fff;
-    --clr-key-text: var(--clr-white);
+    /* --clr-key-text: var(--clr-black); */
     --enterKey-width: 60px;
     --keys-width: 8%;
     --keys-height: 64px;
     --keypad-width: 370px;
+  }
+  .logo {
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    text-align: center;
   }
   h1{
     margin: 10px 0 0 10px;
@@ -131,14 +153,6 @@ body {
 .App{
   width: 100vw;
   height: 100vh;
-}
-.logo {
-  display: block;
-  margin-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 40px;
-  text-align: center;
 }
 h1{
   line-height: 2em;
